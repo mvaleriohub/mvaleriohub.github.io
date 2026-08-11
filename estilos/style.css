@@ -1,0 +1,482 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;700&display=swap'); /* Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=dehaze');
+
+
+:root {
+    /* Cor */
+    --primary: #2952cc;
+    --secundary: #5c7cbf;
+    --background: #f7f8fa;
+    --background2: #ffffff;
+    --font-color: #1e2433;
+    --font-color2: #4a5164;
+    --font-color3: #8b90a0;
+    --font-color-reverse: #f7f8fa;
+    --borda: #e2e5ec;
+    --sucesso: #10b981;
+    --alerta: #f59e0b;
+    --erro: #dc2626;
+
+    /* Tipografia */
+    --font-title: 'Space Grotesk', sans-serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --serif: 'DM Serif Display', serif;
+}
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--font-color);
+    line-height: 1.6;
+    background-color: var(--background);
+}
+
+/* Geral */
+main > section {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+main > section > h2 {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: clamp(1.375rem, 5vw, 1.75rem);
+    line-height: 1.25;
+    color: var(--font-color);
+    margin-bottom: 1rem;
+}
+
+main > section > p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--font-color2);
+    max-width: 65ch;
+}
+
+main > section > p + p {
+    margin-top: 1rem;
+}
+
+main h3 {
+    font-family: var(--font-title);
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 1.3;
+    color: var(--font-color);
+    margin-bottom: 0.5rem;
+}
+
+main li p,
+main article p,
+main details p {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--font-color2);
+}
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary);
+    color: var(--font-color-reverse);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--background2);
+    border-bottom: 1px solid var(--borda);
+    z-index: 10;
+}
+
+header > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+header .menu-burger {
+    font-size: 1.5rem;
+    color: var(--font-color2);
+    cursor: pointer;
+}
+
+header .logo {
+    font-size: 1em;
+    font-weight: lighter;
+    font-style: italic;
+    font-family: var(--serif);
+}
+
+header nav {
+    z-index: 20;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--background2);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    width: 50%;
+    height: 100vh;
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+header nav.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+header nav > a {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--font-color2);
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+header nav > a:hover {
+    color: var(--primary);
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.212);
+    z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    height: 100vh;
+    width: 100%;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hero */
+main > #hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    min-height: 100vh;
+    padding: 4rem 1rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70'%3E%3Ctext x='0' y='20' font-family='monospace' font-size='18' fill='%23185FA5' opacity='0.2'%3E%26lt%3B/%26gt%3B%3C/text%3E%3Ctext x='35' y='55' font-family='monospace' font-size='14' fill='%23185FA5' opacity='0.16'%3E%7B %7D%3C/text%3E%3C/svg%3E");
+    background-repeat: repeat;
+    transform: rotate(-8deg) scale(1.3);
+    pointer-events: none;
+}
+
+#hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+#hero > h1 {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: clamp(1.9rem, 6vw, 2rem);
+    line-height: 1.4;
+    color: var(--font-color);
+    max-width: 20ch;
+}
+
+#hero > h1 > span {
+    display: block;
+}
+
+#hero > p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--font-color2);
+    max-width: 40ch;
+}
+
+#hero > a:hover {
+    background-color: var(--font-color2);
+}
+
+/* Selos abaixo do CTA */
+#hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.625rem;
+}
+
+#hero-badges > span {
+    display: flex;
+    align-items: center;
+    gap: 0.3125rem;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: var(--font-color2);
+    background-color: var(--bg-color, #fff);
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 999px;
+    padding: 0.375rem 0.75rem;
+}
+
+/* Sobre */
+#sobre > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 0;
+}
+
+/* Serviços */
+#servicos > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+#servicos > ul > li {
+    background-color: var(--background2);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 1.25rem;
+}
+
+/* Seção: Diferencial */
+#diferencial {
+    border-left: 4px solid var(--primary);
+}
+
+/* Portfólio */
+#portfolio > article {
+    background-color: var(--background2);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+#portfolio > article > a {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+#portfolio > article > a:hover {
+    text-decoration: underline;
+}
+
+/* Como funciona */
+#processo > ol {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    counter-reset: passo;
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+#processo > ol > li {
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+#processo > ol > li::before {
+    counter-increment: passo;
+    content: counter(passo);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: var(--font-color-reverse);
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 0.875rem;
+    border-radius: 50%;
+}
+
+/* Contato */
+#contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    background-color: var(--background2);
+    border-radius: 16px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--font-color);
+    color: var(--font-color-reverse);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+footer > p {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+}
+
+footer > nav {
+    display: none;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+footer > nav > a {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--font-color-reverse);
+    text-decoration: none;
+}
+
+footer > nav > a:hover {
+    text-decoration: underline;
+}
+
+/* FAQ */
+#faq {
+    padding: 3rem 1rem;
+}
+
+#faq > h2 {
+    margin: 1.5rem 0;
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: clamp(1.375rem, 5vw, 1.75rem);
+    line-height: 1.25;
+    color: var(--font-color);
+    margin-bottom: 1rem;
+}
+
+#faq > details {
+    background-color: var(--background2);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: border-color 0.2s ease;
+}
+
+#faq > details + details {
+    margin-top: 0.75rem;
+}
+
+#faq > details[open] {
+    border-color: var(--primary);
+}
+
+#faq > details > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-family: var(--font-title);
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: var(--font-color);
+    cursor: pointer;
+    list-style: none;
+}
+
+#faq > details > summary::-webkit-details-marker {
+    display: none;
+}
+
+#faq > details > summary:hover {
+    color: var(--primary);
+}
+
+#faq > details > summary::after {
+    content: '+';
+    flex-shrink: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-title);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    background-color: var(--background);
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+#faq > details[open] > summary::after {
+    transform: rotate(45deg);
+}
+
+#faq > details > p {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--borda);
+}
