@@ -1,11 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miguel Valério | Desenvolvedor Web — Sites Rápidos e Sob Medida</title>
+  <meta name="description" content="Desenvolvimento de sites rápidos e sob medida com HTML, CSS e JS puro. Sem frameworks, sem código inflado. Atendimento remoto para todo o Brasil.">
+  <link rel="stylesheet" href="estilos/style.css">
 </head>
 <body>
-    <h1>Em desenvolvimento...</h1>
+  <header>
+    <div>
+      <span class="material-symbols-outlined menu-burger btn-menu" onclick="toggleMenu()">dehaze</span>
+      <span class="logo">Miguel Valério</span>
+    </div>
+    <nav id="menu" class="menu-hamburguer">
+      <span class="material-symbols-outlined menu-burger" onclick="toggleMenu()">dehaze</span>
+      <a href="#hero">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#processo">Como funciona</a>
+      <a href="#faq">Perguntas frequentes</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="overlay"></div>
+  </header>
+
+  <main>
+    <!-- 1. Hero -->
+    <section id="hero">
+      <h1><span>Sites Rápidos,</span> <span>Sob Medida</span> e sem Código Inflado</h1>
+      <p>Desenvolvimento web com HTML, CSS e JavaScript puro — performance de verdade, sem o peso de frameworks desnecessários.</p>
+      <a href="https://wa.me/5569999375311?text=Ol%C3%A1%2C%20Miguel!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20pedir%20um%20or%C3%A7amento%20para%20o%20meu%20site." target="_blank" rel="noopener" class="botao">Solicitar Orçamento pelo WhatsApp</a>
+      <div id="hero-badges">
+        <span><i class="ti ti-bolt" aria-hidden="true"></i>Performance real</span>
+        <span><i class="ti ti-feather" aria-hidden="true"></i>Zero código inflado</span>
+        <span><i class="ti ti-target-arrow" aria-hidden="true"></i>Feito sob medida</span>
+      </div>
+    </section>
+
+    <!-- 2. Sobre -->
+    <section id="sobre">
+      <h2>Quem constrói o seu site</h2>
+      <p>Sou Miguel Valério, desenvolvedor e designer web focado em código limpo e performance real.</p>
+      <p>Trabalho <strong>sem frameworks</strong> — HTML, CSS e JavaScript no seu estado mais puro. Isso significa sites <strong>mais leves, mais rápidos de carregar e mais fáceis de manter</strong> no futuro, sem dependências que ficam obsoletas ou pesam o projeto à toa.</p>
+      <p>Meu foco não é entregar "mais um site pronto". É entender o que o seu negócio precisa e construir algo <strong>sob medida</strong> — do zero, com atenção a cada detalhe.</p>
+    </section>
+
+    <!-- 3. Serviços -->
+    <section id="servicos">
+      <h2>O que eu entrego</h2>
+      <ul>
+        <li>
+          <h3>Sites institucionais</h3>
+          <p>Presença profissional online para seu negócio, com estrutura pensada pra converter visitante em contato.</p>
+        </li>
+        <li>
+          <h3>Landing pages</h3>
+          <p>Páginas focadas em um único objetivo: campanha, produto ou captação de leads.</p>
+        </li>
+        <li>
+          <h3>Manutenção e ajustes</h3>
+          <p>Atualizações, correções e melhorias em sites já existentes.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 4. Por que vanilla importa -->
+    <section id="diferencial">
+      <h2>Menos código, mais resultado</h2>
+      <p>Muitos sites carregam frameworks e bibliotecas que o visitante nunca vai perceber — só o tempo de carregamento mais lento.</p>
+      <p>Construir com HTML, CSS e JavaScript puro significa <strong>um site mais leve, que carrega mais rápido</strong>, funciona melhor no Google e <strong>custa menos pra manter</strong> no longo prazo. Performance não é detalhe técnico: é <strong>experiência do seu cliente</strong> e é <strong>ranqueamento de busca</strong>.</p>
+    </section>
+
+    <!-- 5. Portfólio -->
+    <section id="portfolio">
+      <h2>Projetos</h2>
+
+      <article>
+        <h3>Trinca — Jogo da velha com identidade própria</h3>
+        <p>Um jogo da velha construído inteiramente em HTML, CSS e JavaScript puro, com dois modos de jogo (jogador vs jogador e jogador vs IA) e uma identidade visual própria — até os símbolos X e O são construídos com gradientes CSS, sem usar texto ou imagem.</p>
+        <a href="https://mvaleriohub.github.io/jogo-da-velha/" target="_blank" rel="noopener">Ver projeto ao vivo</a>
+      </article>
+
+      <article>
+        <h3>Projeto de login</h3>
+        <p>Interface de login desenvolvida em HTML e CSS durante estudos de fundamentos web.</p>
+        <a href="https://github.com/mvaleriohub/projeto-login" target="_blank" rel="noopener">Ver no GitHub</a>
+      </article>
+    </section>
+
+    <!-- 6. Como funciona o processo -->
+    <section id="processo">
+      <h2>Como funciona</h2>
+      <ol>
+        <li>
+          <h3>Briefing</h3>
+          <p>Conversamos sobre seu negócio, objetivo e o que o site precisa entregar.</p>
+        </li>
+        <li>
+          <h3>Proposta</h3>
+          <p>Você recebe escopo, prazo e valor, sem letra miúda.</p>
+        </li>
+        <li>
+          <h3>Desenvolvimento</h3>
+          <p>Construo o site sob medida, com atualizações no processo.</p>
+        </li>
+        <li>
+          <h3>Entrega</h3>
+          <p>Site no ar, testado e pronto pra receber seus clientes.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 7. CTA final -->
+    <section id="contato">
+      <h2>Vamos construir seu site?</h2>
+      <p>Me conta um pouco sobre seu negócio e eu te retorno com uma proposta.</p>
+      <a href="https://wa.me/5569999375311?text=Ol%C3%A1%2C%20Miguel!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20pedir%20um%20or%C3%A7amento%20para%20o%20meu%20site." target="_blank" rel="noopener" class="botao">Solicitar orçamento pelo WhatsApp</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Miguel Valério — Desenvolvedor Web</p>
+    <nav>
+      <a href="https://github.com/mvaleriohub" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://wa.me/5569999375311?text=Ol%C3%A1%2C%20Miguel!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20pedir%20um%20or%C3%A7amento%20para%20o%20meu%20site.">Contato</a>
+    </nav>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <!-- FAQ -->
+    <section id="faq">
+      <h2>Perguntas frequentes</h2>
+
+      <details>
+        <summary>Quanto custa um site?</summary>
+        <p>O valor varia conforme o escopo do projeto — número de seções, funcionalidades e prazo. Como trabalho sem frameworks e sem templates prontos, <strong>cada site é construído sob medida</strong>, o que impacta o orçamento final. Me conta um pouco sobre o seu projeto e te retorno com um valor justo e detalhado.</p>
+      </details>
+
+      <details>
+        <summary>Quanto tempo leva pra ficar pronto?</summary >
+        <p>O prazo médio é de <strong>até 2 semanas</strong>, dependendo da complexidade do projeto. Em muitos casos, consigo entregar em bem menos tempo — mas prefiro trabalhar com uma margem confortável pra garantir qualidade e atenção aos detalhes em cada etapa.</p>
+      </details>
+
+      <details>
+        <summary>Por que não usar WordPress, Wix ou outro construtor de sites?</summary>
+        <p>Construtores prontos facilitam o início, mas geram sites mais pesados, com código genérico e dependência de plugins. Desenvolvendo com HTML, CSS e JavaScript puro, o site fica mais leve, carrega mais rápido e você tem <strong>controle total sobre cada linha de código</strong> — sem letra miúda de licença ou <strong>assinatura mensal</strong> de plataforma.</p>
+      </details>
+
+      <details>
+        <summary>Preciso já ter domínio e site pronto pra começar?</summary>
+
+        <p>Não. Posso te orientar desde a escolha do domínio e hospedagem até o site no ar. Se você está começando do zero, sem problema — é só me chamar.</p>
+      </details>
+    </section>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
