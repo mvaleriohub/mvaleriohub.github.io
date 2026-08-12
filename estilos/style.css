@@ -224,7 +224,7 @@ main > #hero {
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    min-height: 100vh;
+    min-height: 90vh;
     padding: 4rem 1rem;
     text-align: center;
     overflow: hidden;
