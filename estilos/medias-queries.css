@@ -1,0 +1,201 @@
+@charset "UTF-8";
+
+/* Mobile grande / Phablet (481px+) */
+@media (min-width: 481px) {
+    footer > p > span {
+        display: inline;
+    }
+}
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+
+    main > section {
+        padding: 4rem 2rem;
+    }
+
+    main > #hero {
+        padding: 4rem 2rem;
+    }
+
+    #faq {
+        padding: 4rem 2rem;
+    }
+
+    /* Sobre: parágrafos lado a lado */
+    #sobre > div {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    #sobre > div > p {
+        flex: 1;
+    }
+
+    /* Portfólio em duas colunas */
+    #portfolio {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        align-items: start;
+    }
+
+    #portfolio > h2 {
+        grid-column: 1 / -1;
+    }
+
+    #portfolio > article {
+        margin-top: 0;
+    }
+
+    /* Processo em duas colunas */
+    #processo > ol {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    header .menu-burger {
+        display: none;
+    }
+
+    header > div {
+        grid-template-columns: auto 1fr auto;
+    }
+
+    header nav {
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        height: auto;
+        padding: 0;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        background-color: transparent;
+    }
+
+    .overlay {
+        display: none;
+    }
+
+    footer > nav {
+        display: flex;
+    }
+
+}
+
+/* Desktop (1025px+) */
+@media (min-width: 1025px) {
+    .botao {
+        transform: scale(1);
+        transition: background-color 0.2s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .botao:hover {
+        background-color: var(--font-color);
+        transform: scale(1.06);
+    }
+
+    header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    column-gap: 2rem;
+    padding-inline: 4rem;
+    padding-block: 1rem;
+    }
+
+    header > div {
+        display: contents; /* o div "desaparece", botão e logo viram itens do grid */
+    }
+
+    header > div .botao-header {
+        grid-column: 1;
+        order: 1;
+    }
+
+    header > div .logo {
+        grid-column: 3;
+        order: 3;
+    }
+
+    header > nav#menu {
+        grid-column: 2;
+        justify-self: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: static;
+        order: 2;
+    }
+
+    header > nav#menu .menu-burger {
+        display: none;
+    }
+
+    #servicos > ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main > section {
+        padding: 5rem 3rem;
+    }
+
+    main > #hero {
+        padding: 5rem 3rem;
+    }
+
+    #faq {
+        padding: 5rem 3rem;
+    }
+
+    #contato {
+        padding: 5rem 3rem;
+    }
+
+    /* Serviços em três colunas */
+    #servicos > ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Processo em quatro colunas (são 4 passos) */
+    #processo > ol {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
+/*Wide / Full HD, 2K (1441px+)*/
+@media (min-width: 1441px) {
+
+    main > section {
+        padding: 6rem 5rem;
+    }
+
+    main > #hero {
+        padding: 6rem 5rem;
+    }
+
+    #faq {
+        padding: 6rem 5rem;
+    }
+
+    #contato {
+        padding: 6rem 5rem;
+    }
+
+}
+
+/* Ultra Wide / 4K+ (1921px+) */
+@media (min-width: 1921px) {
+
+    main > section {
+        max-width: 1600px;
+    }
+
+}
