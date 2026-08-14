@@ -295,6 +295,52 @@ main > #hero {
     margin-top: 0;
 }
 
+/* Porque */
+#porque {
+    background-color: var(--background2);
+    border-radius: 16px;
+}
+
+#porque > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    counter-reset: motivo;
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+#porque > ul > li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 3.5rem;
+}
+
+#porque > ul > li::before {
+    counter-increment: motivo;
+    content: counter(motivo);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: clamp(2rem, 1.6rem + 1.6vw, 3rem);
+    line-height: 1;
+    color: var(--primary);
+    opacity: 0.15;
+}
+
+#porque > ul > li + li {
+    padding-top: 2rem;
+    border-top: 1px solid var(--borda);
+}
+
+#porque > ul > li > h3 {
+    color: var(--primary);
+}
+
 /* Serviços */
 #servicos > ul {
     display: flex;
