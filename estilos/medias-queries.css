@@ -21,7 +21,7 @@
     #faq {
         padding: 4rem 2rem;
     }
-    
+
     /* Portfólio em duas colunas */
     #portfolio {
         display: grid;
@@ -156,6 +156,17 @@
     /* Processo em quatro colunas (são 4 passos) */
     #processo > ol {
         grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Hover sutil nos cards de Serviços e Portfólio */
+    #servicos > ul > li,
+    #portfolio > article {
+        transition: border-color 0.1s ease;
+    }
+
+    #servicos > ul > li:hover,
+    #portfolio > article:hover {
+        border-color: #c5c7ce;
     }
 
 }
