@@ -18,26 +18,18 @@
         padding: 4rem 2rem;
     }
 
-    #porque > ul > li {
-        padding-left: 4rem;
-    }
-
-    #porque > ul > li > p {
-        max-width: 60ch;
-    }
-
     #faq {
         padding: 4rem 2rem;
     }
 
-    /* Sobre: parágrafos lado a lado */
-    #sobre > div {
+    /* Sobre: pontos rápidos em duas colunas */
+    #sobre > .pontos-rapidos {
         flex-direction: row;
-        gap: 2rem;
+        flex-wrap: wrap;
     }
 
-    #sobre > div > p {
-        flex: 1;
+    #sobre > .pontos-rapidos > li {
+        flex: 1 1 calc(50% - 0.5rem);
     }
 
     /* Portfólio em duas colunas */
