@@ -288,57 +288,26 @@ main > #hero {
 }
 
 /* Sobre */
-#sobre > div {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 0;
+#sobre > p + p {
+    margin-top: 1rem;
 }
 
-/* Porque */
-#porque {
-    background-color: var(--background2);
-    border-radius: 16px;
-}
-
-#porque > ul {
+/* Sobre: lista de pontos rápidos (substitui a antiga seção #porque) */
+#sobre > .pontos-rapidos {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    counter-reset: motivo;
+    gap: 1rem;
     list-style: none;
     margin-top: 1.5rem;
 }
 
-#porque > ul > li {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding-left: 3.5rem;
-}
-
-#porque > ul > li::before {
-    counter-increment: motivo;
-    content: counter(motivo);
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-family: var(--font-title);
-    font-weight: 700;
-    font-size: clamp(2rem, 1.6rem + 1.6vw, 3rem);
-    line-height: 1;
-    color: var(--primary);
-    opacity: 0.15;
-}
-
-#porque > ul > li + li {
-    padding-top: 2rem;
-    border-top: 1px solid var(--borda);
-}
-
-#porque > ul > li > h3 {
-    color: var(--primary);
+#sobre > .pontos-rapidos > li {
+    font-family: var(--font-body);
+    font-size: var(--tamanho-pequeno);
+    line-height: 1.6;
+    color: var(--font-color2);
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--primary);
 }
 
 /* Serviços */
@@ -355,11 +324,6 @@ main > #hero {
     border: 1px solid var(--borda);
     border-radius: 12px;
     padding: 1.25rem;
-}
-
-/* Seção: Diferencial */
-#diferencial {
-    border-left: 4px solid var(--primary);
 }
 
 /* Portfólio */
