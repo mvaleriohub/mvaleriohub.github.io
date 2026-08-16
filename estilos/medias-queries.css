@@ -21,17 +21,7 @@
     #faq {
         padding: 4rem 2rem;
     }
-
-    /* Sobre: pontos rápidos em duas colunas */
-    #sobre > .pontos-rapidos {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    #sobre > .pontos-rapidos > li {
-        flex: 1 1 calc(50% - 0.5rem);
-    }
-
+    
     /* Portfólio em duas colunas */
     #portfolio {
         display: grid;
