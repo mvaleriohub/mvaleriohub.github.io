@@ -123,6 +123,20 @@ main details p {
     transform: scale(1.06);
 }
 
+/* Animação do cartão */
+/* Estilo básico só para os cartões ficarem visíveis no exemplo */
+
+.escondido {
+  opacity: 0;
+  transform: translateY(50px); /* Joga o elemento 100px para baixo */
+  transition: all 0.8s ease-out; /* Define a duração e a suavidade da animação */
+}
+
+.mostrar {
+  opacity: 1;
+  transform: translateY(0); /* Volta para a posição original */
+}
+
 /* Header */
 header {
     position: sticky;

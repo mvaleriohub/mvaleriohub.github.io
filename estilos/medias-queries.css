@@ -87,7 +87,7 @@
 
     .botao:hover {
         background-color: var(--font-color);
-        transform: scale(1.06);
+        transform: scale(1);
     }
 
     header {

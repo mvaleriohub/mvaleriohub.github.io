@@ -1,0 +1,17 @@
+const observador = new IntersectionObserver((entradas) => {
+  entradas.forEach((entrada) => {
+    if (entrada.isIntersecting) {
+      // Adiciona a classe que faz o elemento aparecer
+      entrada.target.classList.add('mostrar');
+      
+      // Comando que faz o JS parar de observar este elemento após ele aparecer
+      observador.unobserve(entrada.target);
+    }
+    // O bloco "else" que estava aqui foi removido!
+  });
+});
+
+const elementosEscondidos = document.querySelectorAll('.escondido');
+elementosEscondidos.forEach((elemento) => {
+  observador.observe(elemento);
+});
